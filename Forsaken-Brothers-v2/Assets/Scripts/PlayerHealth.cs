@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
     public int health;
+    public int durationYellow = 5;
 
   
 
@@ -33,7 +34,19 @@ public class PlayerHealth : MonoBehaviour
         //    Destroy(other.gameObject);
 
         //}
+
+        if (other.CompareTag("HealthUp"))
+        {
+            //Destroy(gameObject);
+            health += 50;
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            StartCoroutine(RestColorYellow());
+        }
     }
+
+    
+
+
     public int getHealth()
     {
         return health;
@@ -44,6 +57,12 @@ public class PlayerHealth : MonoBehaviour
         {
             GameObject.Destroy(gameObject);
         }
+    }
+
+    private IEnumerator RestColorYellow()
+    {
+        yield return new WaitForSeconds(durationYellow);
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
 }
