@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - PowerUp
   - HealthUp
+  - SpeedUp
+  - RangeUp
   layers:
   - Default
   - TransparentFX
