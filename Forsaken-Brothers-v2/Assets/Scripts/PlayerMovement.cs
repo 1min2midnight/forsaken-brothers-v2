@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Animator animator;
     public Rigidbody2D rb;
+    public int durationSpeed = 10;
 
     Vector2 movement;
 
@@ -28,5 +29,23 @@ public class PlayerMovement : MonoBehaviour
         // player movement
         rb.MovePosition(rb.position + movement *moveSpeed *Time.fixedDeltaTime);
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("SpeedUp"))
+        {
+            moveSpeed = 8f;
+            GetComponent<SpriteRenderer>().color = Color.blue;
+            StartCoroutine(RestSpeed());
+        }
+    }
+
+
+    private IEnumerator RestSpeed()
+    {
+        yield return new WaitForSeconds(durationSpeed);
+        moveSpeed = 5f;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }

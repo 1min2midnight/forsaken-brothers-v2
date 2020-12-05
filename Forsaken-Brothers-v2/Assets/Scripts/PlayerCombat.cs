@@ -10,6 +10,7 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
     public int attackDamage = 40;
     public int durationA = 30;
+    public int durationRange = 30;
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -61,12 +62,30 @@ public class PlayerCombat : MonoBehaviour
             StartCoroutine(RestAttack());
                
         }
+
+        if (collision.tag == "RangeUp")
+        {
+            Destroy(collision.gameObject);
+            attackRange = 2f;
+            GetComponent<SpriteRenderer>().color = Color.gray;
+            StartCoroutine(RestRange());
+                
+        }
+
+
     }
 
     private IEnumerator RestAttack()
     {
         yield return new WaitForSeconds(durationA);
         attackDamage = 40;
+        GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    private IEnumerator RestRange()
+    {
+        yield return new WaitForSeconds(durationRange);
+        attackRange = 0.5f;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
