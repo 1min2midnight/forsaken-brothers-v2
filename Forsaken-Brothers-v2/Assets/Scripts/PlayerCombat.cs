@@ -9,6 +9,7 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public int attackDamage = 40;
+    public int durationA = 30;
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
@@ -45,5 +46,27 @@ public class PlayerCombat : MonoBehaviour
         if (attackpoint == null)
             return;
         Gizmos.DrawWireSphere(attackpoint.position, attackRange);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        
+        if (collision.tag == "PowerUp")
+        {
+            //Debug.Log("powerup attained");
+            Destroy(collision.gameObject);
+            attackDamage = 55;
+            GetComponent<SpriteRenderer>().color = Color.red;
+            StartCoroutine(RestAttack());
+               
+        }
+    }
+
+    private IEnumerator RestAttack()
+    {
+        yield return new WaitForSeconds(durationA);
+        attackDamage = 40;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
