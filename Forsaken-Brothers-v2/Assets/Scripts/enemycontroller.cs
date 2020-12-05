@@ -14,7 +14,7 @@ public class enemycontroller : MonoBehaviour
     void Start()
     {
         myAnim = GetComponent<Animator>();
-        target = FindObjectOfType<PlayerController>().transform;
+        target = FindObjectOfType<PlayerMovement>().transform;
     }
 
     // Update is called once per frame
