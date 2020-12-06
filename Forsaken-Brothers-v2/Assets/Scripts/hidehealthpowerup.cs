@@ -9,6 +9,7 @@ public class hidehealthpowerup : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            SoundManagerScript.PlaySound("powerupp");
             Destroy(gameObject);
         }
     }

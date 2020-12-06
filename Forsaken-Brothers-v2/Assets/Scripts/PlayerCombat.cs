@@ -22,7 +22,7 @@ public class PlayerCombat : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
+                SoundManagerScript.PlaySound("attack");
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
             }
@@ -56,6 +56,7 @@ public class PlayerCombat : MonoBehaviour
         if (collision.tag == "PowerUp")
         {
             //Debug.Log("powerup attained");
+            SoundManagerScript.PlaySound("powerupp");
             Destroy(collision.gameObject);
             attackDamage = 55;
             GetComponent<SpriteRenderer>().color = Color.red;
@@ -65,6 +66,7 @@ public class PlayerCombat : MonoBehaviour
 
         if (collision.tag == "RangeUp")
         {
+            SoundManagerScript.PlaySound("powerupp");
             Destroy(collision.gameObject);
             attackRange = 2f;
             GetComponent<SpriteRenderer>().color = Color.gray;
