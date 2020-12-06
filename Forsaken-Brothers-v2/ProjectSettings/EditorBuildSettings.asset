@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Instructions.unity
     guid: 9dc9676a4c0d0fd4b80fc7515b033a36
   - enabled: 1
+    path: Assets/Scenes/EscapeMenu.unity
+    guid: faf17924c96d2064bbd460d262e75abd
+  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 408d30e5cf6145a41a4330f10d043440
   m_configObjects: {}
