@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            SoundManagerScript.PlaySound("enemyattack");
             health -= 10;
            
 
@@ -56,6 +57,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
+            SoundManagerScript.PlaySound("playerdead");
             GameObject.Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
         }

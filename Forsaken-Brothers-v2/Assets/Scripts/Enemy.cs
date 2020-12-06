@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
+            SoundManagerScript.PlaySound("enemydead");
             Die();
         }
         
