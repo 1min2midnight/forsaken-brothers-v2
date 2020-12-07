@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    // Update is called once per frame
+    private int currentSceneIndex;
     void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
             SceneManager.LoadScene("MainMenu");
         }
 

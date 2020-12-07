@@ -683,7 +683,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1468013078}
+      - m_Target: {fileID: 11500000, guid: 13cb958e6e488254eb123e44a33abbc8, type: 3}
         m_TargetAssemblyTypeName: 
         m_MethodName: 
         m_Mode: 1
@@ -901,6 +901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468013079}
   - component: {fileID: 1468013080}
+  - component: {fileID: 1468013081}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -936,6 +937,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44d5091e36d6e04499d5e8383eb58467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1468013081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1468013078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13cb958e6e488254eb123e44a33abbc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1536167230
