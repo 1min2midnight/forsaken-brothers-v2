@@ -10,7 +10,7 @@ public class SoundManagerScript : MonoBehaviour
     {
         playerHit = Resources.Load<AudioClip>("attack");
         powerUp = Resources.Load<AudioClip>("powerupp");
-        playerDead = Resources.Load<AudioClip>("playerdead");
+        playerDead = Resources.Load<AudioClip>("lose");
         enemyDead = Resources.Load<AudioClip>("enemydead");
         enemyAttack = Resources.Load<AudioClip>("knife");
         backgroundMusic1 = Resources.Load<AudioClip>("initial_song");

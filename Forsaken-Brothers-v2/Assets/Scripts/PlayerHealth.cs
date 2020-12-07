@@ -41,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
         if (other.CompareTag("HealthUp"))
         {
             //Destroy(gameObject);
+            SoundManagerScript.PlaySound("powerupp");
             health += 50;
             GetComponent<SpriteRenderer>().color = Color.yellow;
             StartCoroutine(RestColorYellow());
@@ -58,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
-            SoundManagerScript.PlaySound("playerdead");
+            SoundManagerScript.PlaySound("lose");
             GameObject.Destroy(gameObject);
             SceneManager.LoadScene("GameOver");
         }

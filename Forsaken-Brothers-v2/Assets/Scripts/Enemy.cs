@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        ScoreManager.currentScore += 20;
         GameObject.Destroy(gameObject);
         Debug.Log("enemy died");
 

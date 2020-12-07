@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.CompareTag("SpeedUp"))
         {
+            SoundManagerScript.PlaySound("powerupp");
             moveSpeed = 8f;
             GetComponent<SpriteRenderer>().color = Color.blue;
             StartCoroutine(RestSpeed());
