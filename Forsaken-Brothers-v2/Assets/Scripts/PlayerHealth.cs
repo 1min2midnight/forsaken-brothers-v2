@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
+    public int maxHealth = 100;
     public int health;
     public int durationYellow = 5;
 
