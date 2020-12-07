@@ -22,7 +22,7 @@ public class HUD : MonoBehaviour
     void Update()
     {
         healthStat = player.GetComponent<PlayerHealth>().getHealth();
-        Debug.Log(" stat is " + healthStat);
+        //Debug.Log(" stat is " + healthStat);
         healthText.text = "Health: " + healthStat;
         
     }
